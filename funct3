@@ -3,39 +3,55 @@ using System;
 public class Program
 {
 	public static string [,] agenda = new string[10,4];
+	static string PedirDatos(string linea) 
+
+        { 
+            string dato = ""; 
+
+            dato = "Ingrese "+linea+" : "; 
+
+            return dato; 
+
+        } 
+
 	static void ModeContact(string find){
+	    for(int i=0; i<=9;i++){
+	        if(agenda[i,0]==find){
+	                    Console.Write(PedirDatos("nombre:")); 
+
+                        agenda[i, 0] = Console.ReadLine(); 
+
+                        Console.Write(PedirDatos("apellido:")); 
+
+                        agenda[i, 1] = Console.ReadLine(); 
+
+                        Console.Write(PedirDatos("direccion:")); 
+
+                        agenda[i, 2] = Console.ReadLine(); 
+
+                        Console.Write(PedirDatos("telefono:")); 
+
+                        agenda[i,3 ] = Console.ReadLine(); 
+                        break;
+	        }
+	    }
             
-             if (find == agenda[0, f]) 
-
-                    { 
-
-                        Console.Write(PedirDatos("Nombre:")); 
-
-                        agenda[0, f] = Console.ReadLine(); 
-
-                        Console.Write(PedirDatos("Apellido:")); 
-
-                        agenda[1, f] = Console.ReadLine(); 
-
-                        Console.Write(PedirDatos("Direccion:")); 
-
-                        agenda[2, f] = Console.ReadLine(); 
-
-                        Console.Write(PedirDatos("Telefono:")); 
-
-                        agenda[3, f] = Console.ReadLine(); 
-                    }
+             
                 
         }
          static void DelContact(string search){
-                 search == (agenda[0, f]);
-
-                    { 
-                        agenda[0, f] = " "; 
-                        agenda[1, f] = " "; 
-                        agenda[2, f] = " "; 
-                        agenda[3, f] = " "; 
-                    } 
+	  for(int j=0; j<=9; j++){
+                     if(agenda[j,0]==search){
+                        agenda[j, 0] = ""; 
+                        agenda[j, 1] = ""; 
+                        agenda[j, 2] = ""; 
+                        agenda[j, 3] = ""; 
+                        break;
+                     }
+                     
+                       
+                }
+                   
         }
     public static void Main(string[] args) 
     
@@ -68,10 +84,10 @@ public class Program
 
                 Console.WriteLine("Ingrese apellido: "); 
                 agenda[f, 1] = Console.ReadLine(); 
-
+		
                 Console.WriteLine("Ingrese dirección: "); 
                 agenda[f, 2] = Console.ReadLine(); 
-                
+
                 Console.WriteLine("Ingrese telefono: "); 
                 agenda[f, 3] = Console.ReadLine(); 
                 
@@ -106,8 +122,8 @@ public class Program
                 }
                 Console.WriteLine(usuario); 
                 Console.ReadKey(); 
-                 break;
-                  }
+		  break;
+                }
         }
         
         if(num==4)
@@ -123,7 +139,7 @@ public class Program
         {
           Console.WriteLine("Escriba el nombre del contacto que desea eliminar");
              string search = Console.ReadLine();
-             DelContact(search)
+             DelContact(search);
          }
         
         if(num==6) 
@@ -135,6 +151,3 @@ public class Program
     }
 }
 
-
-Profe lo intente hacer tanto con el suyo como con el mio, pero ambos tenian errores y no supe como arreglarlos:(, a la vez quiero decirle
-que voy a esforzarme mas para poder entender este tema. Feliz dia!
